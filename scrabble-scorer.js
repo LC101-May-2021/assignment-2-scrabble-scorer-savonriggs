@@ -48,7 +48,7 @@ let scrabbleScore = function(word){
   for (const letter in newPointStructure){
     for (let i = 0; i < word.length; i++){
       if (letter.includes(word[i].toLowerCase())){
-    score += newPointStructure[letter]
+    score += Number(newPointStructure[letter])
     }
     }
   }
