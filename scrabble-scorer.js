@@ -81,18 +81,18 @@ return score
  let simpleScorer = {
   name: "SimpleScore",
   description: "Each letter is worth 1 point.",
-  scorerFunction: simpleScore
+  scoringFunction: simpleScore
  }
   let bonusVowels = {
     name: "BonusVowels",
   description: "Vowels are 3 pts, consonants are 1 pt.",
-  scorerFunction: vowelBonusScore
+  scoringFunction: vowelBonusScore
   }
 
   let scrabbleScorer = {
     name: "Scrabble",
   description: "Uses Scrabble point system",
-  scorerFunction: scrabbleScore
+  scoringFunction: scrabbleScore
   }
 const scoringAlgorithms = [simpleScorer, bonusVowels, scrabbleScorer ];
 
@@ -107,11 +107,11 @@ function scorerPrompt() {
   console.log(scrabbleScorer.description)
   let choice = input.question("Enter 0, 1, or 2:")
   if (choice === "0"){
-    console.log(`Score for ${word}: ${scoringAlgorithms[0].scorerFunction(word)}`)
+    console.log(`Score for ${word}: ${scoringAlgorithms[0].scoringFunction(word)}`)
   }else if  (choice === "1"){
-    console.log(`Score for ${word}: ${scoringAlgorithms[1].scorerFunction(word)}`)
+    console.log(`Score for ${word}: ${scoringAlgorithms[1].scoringFunction(word)}`)
   }else if (choice === "2"){
-    console.log(`Score for ${word}: ${scoringAlgorithms[2].scorerFunction(word)}`)
+    console.log(`Score for ${word}: ${scoringAlgorithms[2].scoringFunction(word)}`)
   }
 }
 let newPointStructure = transform(oldPointStructure);
