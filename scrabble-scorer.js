@@ -35,12 +35,15 @@ function oldScrabbleScorer(word) {
 function initialPrompt() {
    console.log("Let's play some scrabble!");
 word = input.question("Enter word to be scored: ")
+//if (word === Number){
+  
+//}
 console.log(scorerPrompt(word));
 };
 
 let simpleScore = function(word){
   
-  return(`Score for ${word} : ${word.length}`);
+  return(word.length);
 };
 
 let scrabbleScore = function(word){
@@ -54,7 +57,7 @@ let scrabbleScore = function(word){
   }
 
     
- return (`Score for ${word} : ${score}`)
+ return score
 };
 
 
@@ -68,7 +71,7 @@ if (vowels.includes(word[i].toUpperCase())){
 }else if (word.length){
   score += 1
 }}
-return (`Score for ${word} : ${score}`)
+return score
 };
 
 
@@ -104,11 +107,11 @@ function scorerPrompt() {
   console.log(scrabbleScorer.description)
   let choice = input.question("Enter 0, 1, or 2:")
   if (choice === "0"){
-    console.log(scoringAlgorithms[0].scorerFunction(word))
+    console.log(`Score for ${word}: ${scoringAlgorithms[0].scorerFunction(word)}`)
   }else if  (choice === "1"){
-    console.log(scoringAlgorithms[1].scorerFunction(word))
+    console.log(`Score for ${word}: ${scoringAlgorithms[1].scorerFunction(word)}`)
   }else if (choice === "2"){
-    console.log(scoringAlgorithms[2].scorerFunction(word))
+    console.log(`Score for ${word}: ${scoringAlgorithms[2].scorerFunction(word)}`)
   }
 }
 let newPointStructure = transform(oldPointStructure);
